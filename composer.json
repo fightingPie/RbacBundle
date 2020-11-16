@@ -1,0 +1,47 @@
+{
+    "name": "symfony-bundle/symfony-rbac",
+    "type": "symfony-bundle",
+    "description": "symfony bundle rbac",
+    "version": "0.1.0",
+    "authors": [
+        {
+            "name": "pie",
+            "email": "huangwenpai@xiaoyouzi.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.1",
+        "symfony/config": "^3.4 || ^4.4 || ^5.0",
+        "symfony/dependency-injection": "4.4.*",
+        "symfony/http-kernel": "^3.4 || ^4.4 || ^5.0",
+        "doctrine/orm": "^2.7",
+        "doctrine/doctrine-bundle": "^2.1",
+        "symfony/yaml": "^4.3||^5.0",
+        "symfony/framework-bundle": "^4.3||^5.0",
+        "symfony/http-foundation": "^3.4 || ^4.4 || ^5.0",
+        "symfony/serializer": "^3.4 || ^4.4 || ^5.0",
+        "symfony/property-access": "^3.4 || ^4.4 || ^5.0",
+        "knplabs/knp-paginator-bundle": "^5.3",
+        "symfony/uid": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "SymfonyRbac\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SymfonyRbac\\Tests\\": "src/Tests/"
+        }
+    },
+    "require-dev": {
+        "symfony/dotenv": "4.4.*",
+        "symfony/maker-bundle": "^1.21",
+        "symfony/phpunit-bridge": "^5.1",
+        "phpunit/phpunit": "^6.4",
+        "symfony/browser-kit": "4.4.*",
+        "symfony/css-selector": "4.4.*",
+        "doctrine/doctrine-fixtures-bundle": "^3.3"
+    }
+}

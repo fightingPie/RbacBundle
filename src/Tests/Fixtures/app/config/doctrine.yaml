@@ -1,0 +1,19 @@
+doctrine:
+    dbal:
+        default_connection: rbac
+        connections:
+            rbac:
+                driver: 'pdo_mysql'
+                url: '%env(DATABASE_RBAC_URL)%'
+    orm:
+        default_entity_manager: rbac
+        entity_managers:
+            rbac:
+                connection: rbac
+                mappings:
+                    Main:
+                        is_bundle: false
+                        type: annotation
+                        dir: '%kernel.project_dir%/src/Entity/'
+                        prefix: 'SymfonyRbac\Entity\'
+                        alias: Rbac

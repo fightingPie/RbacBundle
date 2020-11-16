@@ -1,0 +1,21 @@
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    SymfonyRbac\Controller\:
+        resource: '../../../src/Controller/'
+        tags: [ 'controller.service_arguments' ]
+
+    SymfonyRbac\Repository\:
+        resource: '../../../src/Repository'
+        autowire: true
+        tags: ['doctrine.repository_service']
+
+    SymfonyRbac\Services\RbacManager:
+        class: SymfonyRbac\Services\RbacManager
+        arguments: ['@doctrine.orm.rbac_entity_manager']
+
+    SymfonyRbac\Utils\CircularReferenceHandler:
+        class: SymfonyRbac\Utils\CircularReferenceHandler

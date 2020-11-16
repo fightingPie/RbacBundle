@@ -1,0 +1,109 @@
+#app_bundle_annotations:
+#    # loads routes from the PHP annotations of the controllers found in that directory
+#    resource: '@SymfonyRbacBundle/Controller/'
+#    type:     annotation
+
+#app_bundle_file:
+#    # loads routes from the YAML, XML or PHP files found in some bundle directory
+#    resource: '@SymfonyRbacBundle/Resources/config/routes.yaml'
+
+#doc  https://symfony.com/doc/4.4/routing/custom_route_loader.html
+rbac_routes:
+    path: /rbac/routes
+    methods: GET
+    controller: SymfonyRbac\Controller\RbacController::routesAction
+
+rbac_roles_mapping:
+    path: /rbac/mapping/roles
+    methods: GET
+    controller: SymfonyRbac\Controller\RbacController::roleMappingAction
+
+rbac_permissions_mapping:
+    path: /rbac/mapping/permissions
+    methods: GET
+    controller: SymfonyRbac\Controller\RbacController::permissionMappingAction
+
+rbac_roles_list:
+    path: /rbac/roles
+    methods: GET
+    controller: SymfonyRbac\Controller\RoleController::indexAction
+
+rbac_roles_add:
+    path: /rbac/roles
+    methods: POST
+    controller: SymfonyRbac\Controller\RoleController::addAction
+
+rbac_roles_update:
+    path: /rbac/roles/{roleName}
+    methods: PATCH
+    controller: SymfonyRbac\Controller\RoleController::editAction
+
+rbac_roles_view:
+    path: /rbac/roles/{roleName}
+    methods: GET
+    controller: SymfonyRbac\Controller\RoleController::viewAction
+
+rbac_roles_switch:
+    path: /rbac/roles/{roleName}/switch
+    methods: PATCH
+    controller: SymfonyRbac\Controller\RoleController::switchAction
+
+rbac_roles_delete:
+    path: /rbac/roles/{roleName}
+    methods: DELETE
+    controller: SymfonyRbac\Controller\RoleController::removeAction
+
+rbac_roles_add_permission:
+    path: /rbac/roles/{roleName}/permissions
+    methods: POST
+    controller: SymfonyRbac\Controller\RoleController::addPermissionAction
+
+rbac_roles_assign:
+    path: /rbac/roles/{roleName}/assign
+    methods: POST
+    controller: SymfonyRbac\Controller\RoleController::assignAction
+
+rbac_permissions_list:
+    path: /rbac/permissions
+    methods: GET
+    controller: SymfonyRbac\Controller\PermissionController::indexAction
+
+rbac_permissions_add:
+    path: /rbac/permissions
+    methods: POST
+    controller: SymfonyRbac\Controller\PermissionController::addAction
+
+rbac_permissions_view:
+    path: /rbac/permissions/{permissionName}
+    methods: GET
+    controller: SymfonyRbac\Controller\PermissionController::viewAction
+
+rbac_permissions_update:
+    path: /rbac/permissions/{permissionName}
+    methods: PATCH
+    controller: SymfonyRbac\Controller\PermissionController::editAction
+
+rbac_permissions_delete:
+    path: /rbac/permissions/{permissionName}
+    methods: DELETE
+    controller: SymfonyRbac\Controller\PermissionController::removeAction
+
+rbac_assignments_user:
+    path: /rbac/assignments/{user}
+    methods: GET
+    controller: SymfonyRbac\Controller\AssignmentController::userAction
+
+rbac_assignments_user_add:
+    path: /rbac/assignments/user/{user}/add
+    methods: POST
+    controller: SymfonyRbac\Controller\AssignmentController::userAddAction
+
+rbac_assignments_user_delete:
+    path: /rbac/assignments/user/{user}/remove
+    methods: DELETE
+    controller: SymfonyRbac\Controller\AssignmentController::removeAction
+
+rbac_assignments_user_role_delete:
+    path: /rbac/assignments/user/{user}/role/{roleName}
+    methods: DELETE
+    controller: SymfonyRbac\Controller\AssignmentController::removeOneAction
