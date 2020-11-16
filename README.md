@@ -1,4 +1,4 @@
-# RbacBundle
+# SymfonyRbacBundle
 
 ## Principle explanation:
 
@@ -14,13 +14,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```bash
-php composer.phar require symfony-bundle/symfony-rbac "*"
+php composer.phar require fighting-pie/symfony-rbac "*"
 ```
 
 or add
 
 ```json
-"symfony-bundle/symfony-rbac": "*"
+"fighting-pie/symfony-rbac": "*"
 ```
 to the require section of your composer.json.
 
